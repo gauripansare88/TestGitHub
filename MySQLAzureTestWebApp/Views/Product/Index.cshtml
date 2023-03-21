@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MySQLAzureTestWebApp.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Application uses</h2>
+        <ul>
+            <li>Sample pages using ASP.NET Core MVC</li>
+            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="text-center">
+        <h1 class="display-4">This is a list of Products</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <th scope="row">@product.ProductId</th>
+                        <td>@product.ProductName</td>
+                        <td>@product.Quantity</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
